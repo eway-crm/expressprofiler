@@ -173,7 +173,7 @@
   </Target>
   -->
   <Target Name="AfterCompile">
-    <Exec Command="&quot;$(MSBuildThisFileDirectory)..\Tools\nant-0.91\bin\NAnt.exe&quot; -buildfile:&quot;$(MSBuildThisFileDirectory)..\Build\signfile.nant&quot; -D:ASSEMBLY=&quot;$(MSBuildThisFileDirectory)obj\$(ConfigurationName)\$(TargetFileName)&quot;" Condition="'$(SignCode)' == '1'" />
+    <Exec Command="&quot;$(MSBuildThisFileDirectory)..\..\..\Tools\nant-0.91\bin\NAnt.exe&quot; -buildfile:&quot;$(MSBuildThisFileDirectory)..\..\..\Build\signfile.nant&quot; -D:ASSEMBLY=&quot;$(MSBuildThisFileDirectory)obj\$(ConfigurationName)\$(TargetFileName)&quot;" Condition="'$(SignCode)' == '1'" />
   </Target>
   <PropertyGroup>
     <PostBuildEvent>if /I "$(ConfigurationName)" == "Release" if exist "$(SolutionDir)\ExpressProfiler\sign.bat" "$(SolutionDir)\ExpressProfiler\sign.bat" "$(TargetPath)"</PostBuildEvent>
